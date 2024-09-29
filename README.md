@@ -52,7 +52,10 @@ After running the script, you will be prompted to input two parameters:
 - `a`: The **scale parameter** (must be greater than 0).
 - `k`: The **shape parameter** (must be greater than 0).
 
-##Example:
+---
+
 ```bash
 Enter the value for parameter 'a' (scale parameter, > 0): 1.5
 Enter the value for parameter 'k' (shape parameter, > 0): 0.8
+```
+---
