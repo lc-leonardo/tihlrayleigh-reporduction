@@ -54,6 +54,8 @@ After running the script, you will be prompted to input two parameters:
 
 ---
 
+## Example
+
 ```bash
 Enter the value for parameter 'a' (scale parameter, > 0): 1.5
 Enter the value for parameter 'k' (shape parameter, > 0): 0.8
