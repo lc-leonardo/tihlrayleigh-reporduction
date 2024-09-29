@@ -34,7 +34,8 @@ The script uses two Python libraries, **NumPy** and **Matplotlib**. These can be
 ## Usage
 
 ### 1. Clone or Download the Script
-Download the Python script `tihlrayleigh.py` and place it in a directory of your choice.
+Download the Python script `tihlrayleigh.py` and place it in a directory of your choice. You can also copy the code directly into a new Python file.
+
 ### 2. Run the Script
 1. Open a terminal or command prompt.
 2. Navigate to the directory where you saved `tihlrayleigh.py`:
@@ -55,5 +56,3 @@ For example:
 ```bash
 Enter the value for parameter 'a' (scale parameter, > 0): 1.5
 Enter the value for parameter 'k' (shape parameter, > 0): 0.8
-```
-I made this code errorproof, so it won't crash if there is a wrong input to it.
