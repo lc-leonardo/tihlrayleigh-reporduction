@@ -52,7 +52,30 @@ After running the script, you will be prompted to input two parameters:
 - `a`: The **scale parameter** (must be greater than 0).
 - `k`: The **shape parameter** (must be greater than 0).
 
-For example:
+---
+
+## Example
+
 ```bash
 Enter the value for parameter 'a' (scale parameter, > 0): 1.5
 Enter the value for parameter 'k' (shape parameter, > 0): 0.8
+```
+---
+
+## Troubleshooting
+
+### Common Issues
+
+1. **'python' is not recognized as an internal or external command'**
+   - **Cause:** Python is not installed correctly or not added to your system's PATH.
+   - **Solution:** 
+     - Ensure that you installed Python and **checked the "Add Python to PATH" option** during installation.
+     - You may need to manually add Python to your system's PATH. [Learn how to add Python to PATH](https://docs.python.org/3/using/windows.html#the-full-installer).
+
+2. **Invalid Input Error**
+   - **Cause:** An invalid value (e.g., a negative number or a non-numeric value) was input for parameters `a` or `k`.
+   - **Solution:** 
+     - The parameters `a` and `k` must be positive numbers. If you input an invalid value, the script will display an error message and prompt you to try again.
+
+### Additional Help
+If you encounter any other issues or need further assistance, please feel free to open an issue in the repository or reach out for help.
