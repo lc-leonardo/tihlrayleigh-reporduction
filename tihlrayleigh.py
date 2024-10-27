@@ -9,17 +9,24 @@ def tihlrayleigh_pdf(x, a, k):
 def tihlrayleigh_cdf(x, a, k):
     return 1 - np.exp(-a * k * x**2) / (1 + np.exp(-a * k * x**2))
 
-# Function to plot PDF and CDF
+# Define the Type I Half Logistic Rayleigh Hazard Rate Function
+def tihlrayleigh_hazard(x, a, k):
+    pdf = tihlrayleigh_pdf(x, a, k)
+    cdf = tihlrayleigh_cdf(x, a, k)
+    return pdf / (1 - cdf)
+
+# Function to plot PDF, CDF, and Hazard Rate
 def plot_tihlrayleigh(a, k):
     # Generate a range of x values for plotting
     x = np.linspace(0, 5, 1000)
     
-    # Compute the PDF and CDF for the TIHLR distribution
+    # Compute the PDF, CDF, and Hazard Rate for the TIHLR distribution
     pdf_values = tihlrayleigh_pdf(x, a, k)
     cdf_values = tihlrayleigh_cdf(x, a, k)
+    hazard_values = tihlrayleigh_hazard(x, a, k)
     
-    # Plot the PDF and CDF
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 6))
+    # Plot the PDF, CDF, and Hazard Rate
+    fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(18, 6))
 
     # Plot PDF
     ax1.plot(x, pdf_values, label=f'TIHLR PDF (a={a}, k={k})', color='b')
@@ -34,6 +41,13 @@ def plot_tihlrayleigh(a, k):
     ax2.set_xlabel('x')
     ax2.set_ylabel('F(x)')
     ax2.legend()
+
+    # Plot Hazard Rate
+    ax3.plot(x, hazard_values, label=f'TIHLR Hazard Rate (a={a}, k={k})', color='g')
+    ax3.set_title('TIHLR Hazard Rate')
+    ax3.set_xlabel('x')
+    ax3.set_ylabel('h(x)')
+    ax3.legend()
 
     plt.tight_layout()
     plt.show()
