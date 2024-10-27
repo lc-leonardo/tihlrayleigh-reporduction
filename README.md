@@ -83,7 +83,8 @@ If you encounter any other issues or need further assistance, please feel free t
 
 ## Citation
 
-If you use this code or the TIHLR distribution model in your research, please cite the following paper:
+This work is inspired by the paper:
 
-Al-Babtain, A. A. (2020). A new extended Rayleigh distribution. *Journal of King Saud University – Science*, 32(4), 2576-2581. https://doi.org/10.1016/j.jksus.2020.04.015
+Al-Babtain, A. A. (2020). *A new extended Rayleigh distribution*. Journal of King Saud University – Science, 32(4), 2576-2581. [https://doi.org/10.1016/j.jksus.2020.04.015](https://doi.org/10.1016/j.jksus.2020.04.015)
 
+If you use this code or are inspired by it, please also consider citing the original paper.
