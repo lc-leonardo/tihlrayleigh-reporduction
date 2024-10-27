@@ -7,6 +7,7 @@ This Python script generates the Probability Density Function (PDF) and Cumulati
 - [Usage](#usage)
 - [Example](#example)
 - [Troubleshooting](#troubleshooting)
+- [Citation](#citation)
 
 ---
 
@@ -79,3 +80,10 @@ Enter the value for parameter 'k' (shape parameter, > 0): 0.8
 
 ### Additional Help
 If you encounter any other issues or need further assistance, please feel free to open an issue in the repository or reach out for help.
+
+## Citation
+
+If you use this code or the TIHLR distribution model in your research, please cite the following paper:
+
+Al-Babtain, A. A. (2020). A new extended Rayleigh distribution. *Journal of King Saud University – Science*, 32(4), 2576-2581. https://doi.org/10.1016/j.jksus.2020.04.015
+
