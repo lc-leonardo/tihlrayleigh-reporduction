@@ -6,15 +6,13 @@ import matplotlib.pyplot as plt
 def tihlrayleigh_pdf(x, a, k):
     return 4 * k * a * x * np.exp(-a * k * x**2) / (1 + np.exp(-a * k * x**2))**2
 
-# Define the Type I Half Logistic Rayleigh CDF
+# Define the updated Type I Half Logistic Rayleigh CDF
 def tihlrayleigh_cdf(x, a, k):
-    return 1 - np.exp(-a * k * x**2) / (1 + np.exp(-a * k * x**2))
+    return x * (1 - np.exp(-a * k * x**2)) / (1 + np.exp(-a * k * x**2))
 
-# Define the Type I Half Logistic Rayleigh Hazard Rate Function
+# Define the simplified Type I Half Logistic Rayleigh Hazard Rate Function
 def tihlrayleigh_hazard(x, a, k):
-    pdf = tihlrayleigh_pdf(x, a, k)
-    cdf = tihlrayleigh_cdf(x, a, k)
-    return pdf / (1 - cdf)
+    return (2 * k * a * x) / (1 + np.exp(-a * k * x**2))
 
 # Function to plot all curves on a single plot for multiple (a, k) pairs
 def plot_multiple(df):
@@ -41,14 +39,20 @@ def plot_multiple(df):
     ax1.set_title('TIHLR PDF')
     ax1.set_xlabel('x')
     ax1.set_ylabel('f(x)')
-    
+    ax1.set_xlim(0, 3)
+    ax1.set_ylim(0, 1.5)
+
     ax2.set_title('TIHLR CDF')
     ax2.set_xlabel('x')
     ax2.set_ylabel('F(x)')
-    
+    ax2.set_xlim(0, 4)
+    ax2.set_ylim(0, 4)
+
     ax3.set_title('TIHLR Hazard Rate')
     ax3.set_xlabel('x')
     ax3.set_ylabel('h(x)')
+    ax3.set_xlim(0, 1.5)
+    ax3.set_ylim(0, 3.5)
 
     # Add legends to each subplot
     ax1.legend()
@@ -125,18 +129,24 @@ if __name__ == "__main__":
         ax1.set_title('TIHLR PDF')
         ax1.set_xlabel('x')
         ax1.set_ylabel('f(x)')
+        ax1.set_xlim(0, 3)
+        ax1.set_ylim(0, 1.5)
         ax1.legend()
 
         ax2.plot(x_values, cdf_values, label=f'a={a}, k={k}')
         ax2.set_title('TIHLR CDF')
         ax2.set_xlabel('x')
         ax2.set_ylabel('F(x)')
+        ax2.set_xlim(0, 4)
+        ax2.set_ylim(0, 4)
         ax2.legend()
 
         ax3.plot(x_values, hazard_values, label=f'a={a}, k={k}')
         ax3.set_title('TIHLR Hazard Rate')
         ax3.set_xlabel('x')
         ax3.set_ylabel('h(x)')
+        ax3.set_xlim(0, 1.5)
+        ax3.set_ylim(0, 3.5)
         ax3.legend()
 
         plt.tight_layout()
